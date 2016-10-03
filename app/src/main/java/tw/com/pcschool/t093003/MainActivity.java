@@ -2,6 +2,7 @@ package tw.com.pcschool.t093003;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
         TextView tv = (TextView)findViewById(R.id.textView);
         String str = sp.getString("name", "");
+        tv.setText(str);
+    }
+
+    public void clickRead2(View v)
+    {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        TextView tv = (TextView)findViewById(R.id.textView);
+        String str = sp.getString("example_text", "");
         tv.setText(str);
     }
     public void clickWrite(View v)
