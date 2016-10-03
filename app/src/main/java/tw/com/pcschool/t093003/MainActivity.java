@@ -1,5 +1,6 @@
 package tw.com.pcschool.t093003;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
+        Intent it = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(it);
         return super.onOptionsItemSelected(item);
     }
 }
